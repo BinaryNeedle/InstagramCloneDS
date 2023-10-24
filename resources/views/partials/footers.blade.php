@@ -1,0 +1,1 @@
+{{-- // footer on all pages --}}
