@@ -1,0 +1,10 @@
+@font-face {
+    font-family: insta;
+    src: url('assets\fonts\instagram_title_font_regular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: insta;
+    font-weight: bold;
+    src: url('assets\fonts\instagram_title_font_bold.otf') format("opentype");
+}

@@ -20,6 +20,18 @@
     <link rel="stylesheet" href="{{ URL::asset('/assets/css/layouts/main.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('/assets/css/partials/navbars.css') }}">
     @yield('css')
+    <style>
+        @font-face {
+            font-family: asu;
+            src: url('assets\fonts\instagram_title_font_regular.otf') format("opentype");
+        }
+
+        @font-face {
+            font-family: asu;
+            font-weight: bold;
+            src: url('assets\fonts\instagram_title_font_bold.otf') format("opentype");
+        }
+    </style>
 </head>
 
 <body>
