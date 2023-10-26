@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    @include('partials.navbars')
+    @include('partials.navbar2')
 
     <div class="container wrapper">
         @yield('content')
