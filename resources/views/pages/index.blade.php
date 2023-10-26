@@ -1,6 +1,6 @@
 {{-- // Main Page on Instagram Homepage --}}
 @extends('layouts.main')
-@section('title', 'Postd')
+@section('title', 'Instantgram')
 @section('css')
 @section('content')
     {{-- Story Section Start --}}
