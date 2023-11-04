@@ -10,11 +10,11 @@
                 @csrf
 
                 <div class="mb-4">
-                    <label class="block text-gray-700 font-bold mb-2" for="email">
-                        Email
+                    <label class="block text-gray-700 font-bold mb-2" for="username_or_email">
+                        Username or Email
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
-                    @error('email')
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username_or_email" type="text" name="username_or_email" value="{{ old('username_or_email') }}" required autofocus>
+                    @error('username_or_email')
                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror
                 </div>
@@ -27,13 +27,6 @@
                     @error('password')
                     <p class="text-red-500 text-xs italic">{{ $message }}</p>
                     @enderror
-                </div>
-
-                <div class="mb-4">
-                    <input class="mr-2 leading-tight" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="text-gray-700 font-bold" for="remember">
-                        Remember Me
-                    </label>
                 </div>
 
                 <div class="flex items-center justify-between">
