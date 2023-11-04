@@ -25,18 +25,7 @@
     {{-- <link rel="stylesheet" href="https://unpkg.com/flexmasonry/dist/flexmasonry.css">
     <script src="https://unpkg.com/flexmasonry/dist/flexmasonry.js"></script> --}}
     @yield('css')
-    <style>
-        @font-face {
-            font-family: asu;
-            src: url('assets\fonts\instagram_title_font_regular.otf') format("opentype");
-        }
 
-        @font-face {
-            font-family: asu;
-            font-weight: bold;
-            src: url('assets\fonts\instagram_title_font_bold.otf') format("opentype");
-        }
-    </style>
 </head>
 
 <body>
@@ -54,7 +43,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
     {{-- <script>
         FlexMasonry.init('.grid');
-    </script> --}}
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
