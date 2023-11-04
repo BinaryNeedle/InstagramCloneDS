@@ -1,5 +1,6 @@
-@extends('layouts.app')
-
+@extends('layouts.main')
+@section('title', 'Login to Instantgram')
+@section('css')
 @section('content')
 <div class="flex justify-center items-center h-screen">
     <div class="w-full max-w-md">
@@ -50,4 +51,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+
 @endsection
