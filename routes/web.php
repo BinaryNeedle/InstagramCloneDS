@@ -15,3 +15,4 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'index']);
+Route::get('/login', [PagesController::class, 'login']);
