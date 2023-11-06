@@ -14,7 +14,8 @@
                     </svg>
                 </button>
                 <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
-                    <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="FlowBite Logo" />
+                    <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3"
+                        alt="Instantgram Logo" />
                     <span
                         class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Instantgram</span>
                 </a>
