@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -18,8 +19,15 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->string('images')->nullable();
         });
-    }
 
+        // Add new data
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => '$2y$10$99nwLHJcdq2Na.419MfGzO5SKKbaorw1boeFwoeSFYFZPO7fAgPWa',
+            'name' => 'admin'
+        ]);
+    }
     /**
      * Reverse the migrations.
      *
