@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    protected $redirectTo = '/';
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
     public function showLoginForm()
     {
         return view('pages.auth.login');
