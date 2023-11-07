@@ -1,4 +1,5 @@
-<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+<nav id="navbar" class="fixed z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    style="transition: top 0.3s;">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
@@ -13,7 +14,9 @@
                         </path>
                     </svg>
                 </button>
-                <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
+            </div>
+            <div class="flex items-center sm:hidden">
+                <a href="{{ url('/login') }}" class="flex ml-2 md:mr-24"> {{-- link to page/index --}}
                     <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3"
                         alt="Instantgram Logo" />
                     <span

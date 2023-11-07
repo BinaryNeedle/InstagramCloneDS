@@ -19,7 +19,7 @@
                             id="username_or_email" type="text" name="username_or_email"
                             value="{{ old('username_or_email') }}" required autofocus>
                         @error('username_or_email')
-                            <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-4 pl-1">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -46,7 +46,7 @@
                         </span>
 
                         @error('password')
-                            <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                            <p class="text-red-500 text-xs italic mt-4 pl-1">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="flex flex-col items-center justify-between">

@@ -29,14 +29,30 @@
 </head>
 
 <body>
-    @include('partials.navbar2')
+    @if (URL::current() !== url('/login'))
+    @elseif (URL::current() !== url('/register'))
+    @else
+        @include('partials.navbar2')
+    @endif
     {{-- manual overide the background color for darkmode --}}
-    <div class="p-4 sm:ml-64 dark:bg-[#111828]">
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-            <div class="container mx-auto wrapper">
-                @yield('content')
-            </div>
-        </div>
+    @if (URL::current() !== url('/login'))
+        <div class="p-4 w-full dark:bg-[#111828]">
+        @elseif (URL::current() !== url('/register'))
+            <div class="p-4 w-full dark:bg-[#111828]">
+            @else
+                <div class="p-4 sm:ml-64 dark:bg-[#111828]">
+    @endif
+    @if (URL::current() !== url('/login'))
+        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+        @elseif (URL::current() !== url('/register'))
+            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+            @else
+                <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+    @endif
+    <div class="container mx-auto wrapper">
+        @yield('content')
+    </div>
+    </div>
     </div>
 
     @include('partials.footers')
@@ -46,6 +62,20 @@
     </script> --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+
+    {{-- hide navbar when scroll --}}
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+        };
     </script>
     @yield('script')
 </body>
