@@ -36,22 +36,23 @@
     @endif
     {{-- manual overide the background color for darkmode --}}
     @if (URL::current() !== url('/login'))
-        <main class="p-4 w-full dark:bg-[#111828]">
+        <main class="p-4 w-full dark:bg-[#111828] h-screen">
         @elseif (URL::current() !== url('/register'))
-            <main class="p-4 w-full dark:bg-[#111828]">
+            <main class="p-4 w-full dark:bg-[#111828] h-screen">
             @else
-                <main class="p-4 sm:ml-64 dark:bg-[#111828]">
+                <main class="p-4 sm:ml-64 dark:bg-[#111828] h-screen">
     @endif
     @if (URL::current() !== url('/login'))
-        <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+        <section
+            class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
         @elseif (URL::current() !== url('/register'))
-            <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+            <section
+                class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
             @else
-                <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+                <section
+                    class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 h-full">
     @endif
-    <div class="container mx-auto wrapper">
-        @yield('content')
-    </div>
+    @yield('content')
     </section>
     </main>
 
