@@ -36,24 +36,24 @@
     @endif
     {{-- manual overide the background color for darkmode --}}
     @if (URL::current() !== url('/login'))
-        <div class="p-4 w-full dark:bg-[#111828]">
+        <main class="p-4 w-full dark:bg-[#111828]">
         @elseif (URL::current() !== url('/register'))
-            <div class="p-4 w-full dark:bg-[#111828]">
+            <main class="p-4 w-full dark:bg-[#111828]">
             @else
-                <div class="p-4 sm:ml-64 dark:bg-[#111828]">
+                <main class="p-4 sm:ml-64 dark:bg-[#111828]">
     @endif
     @if (URL::current() !== url('/login'))
-        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+        <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
         @elseif (URL::current() !== url('/register'))
-            <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+            <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
             @else
-                <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+                <section class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     @endif
     <div class="container mx-auto wrapper">
         @yield('content')
     </div>
-    </div>
-    </div>
+    </section>
+    </main>
 
     @include('partials.footers')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
