@@ -29,8 +29,8 @@
 </head>
 
 <body>
-    @if (URL::current() !== url('/login'))
-    @elseif (URL::current() !== url('/register'))
+    @if (URL::current() === url('/login'))
+    @elseif (URL::current() === url('/register'))
     @else
         @include('partials.navbar2')
     @endif
@@ -43,16 +43,15 @@
                 <main class="p-4 sm:ml-64 dark:bg-[#111828] h-screen">
     @endif
     @if (URL::current() !== url('/login'))
-        <section
-            class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
+        <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
         @elseif (URL::current() !== url('/register'))
-            <section
-                class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
+            <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
             @else
-                <section
-                    class="container mx-auto wrapper border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 h-full">
+                <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 h-full">
     @endif
-    @yield('content')
+    <section class="container mx-auto wrapper h-full">
+        @yield('content')
+    </section>
     </section>
     </main>
 
