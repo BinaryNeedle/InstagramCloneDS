@@ -15,7 +15,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex items-center sm:hidden">
+            <div class="flex items-center">
                 <a href="{{ url('') }}" class="flex ml-2 md:mr-24"> {{-- link to page/index --}}
                     <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3"
                         alt="Instantgram Logo" />
@@ -79,7 +79,7 @@
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium h-full flex flex-col items-stretch">
             <li>
-                <a href="#"
+                <a href="{{ url('/') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20">
@@ -90,14 +90,14 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('search') }}" {{-- fix bang kalo mau --}}
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                     </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Followed</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Search</span>
                     {{-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}
                 </a>
             </li>

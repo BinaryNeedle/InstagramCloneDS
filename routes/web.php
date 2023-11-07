@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,9 @@ Route::controller(RegisterController::class)->group(function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/', [PagesController::class, 'index'])->name('dashboard');
+
+// fix this
+Route::controller(SearchController::class)->group(function () {
+    route::get('/search', 'showSearch')->name('search');
+    route::post('/search', 'search');
+});

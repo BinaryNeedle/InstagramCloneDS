@@ -40,19 +40,23 @@
         @elseif (URL::current() === url('/register'))
             <main class="p-4 w-full dark:bg-[#111828] h-screen">
             @else
-                <main class="p-4 pt-20 sm:ml-64 dark:bg-[#111828] h-screen">
+                <main class="pt-14 sm:ml-64 dark:bg-[#111828] h-screen">
     @endif
     @if (URL::current() === url('/login'))
         <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
         @elseif (URL::current() === url('/register'))
             <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
             @else
-                <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
     @endif
     <section class="container mx-auto wrapper h-full">
         @yield('content')
     </section>
-    </section>
+    @if (URL::current() === url('/login'))
+        </section>
+    @elseif (URL::current() === url('/register'))
+        </section>
+    @else
+    @endif
     </main>
 
     @include('partials.footers')
