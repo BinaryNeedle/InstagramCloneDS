@@ -35,19 +35,19 @@
         @include('partials.navbar2')
     @endif
     {{-- manual overide the background color for darkmode --}}
-    @if (URL::current() !== url('/login'))
+    @if (URL::current() === url('/login'))
         <main class="p-4 w-full dark:bg-[#111828] h-screen">
-        @elseif (URL::current() !== url('/register'))
+        @elseif (URL::current() === url('/register'))
             <main class="p-4 w-full dark:bg-[#111828] h-screen">
             @else
-                <main class="p-4 sm:ml-64 dark:bg-[#111828] h-screen">
+                <main class="p-4 pt-20 sm:ml-64 dark:bg-[#111828] h-screen">
     @endif
-    @if (URL::current() !== url('/login'))
+    @if (URL::current() === url('/login'))
         <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
-        @elseif (URL::current() !== url('/register'))
+        @elseif (URL::current() === url('/register'))
             <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
             @else
-                <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14 h-full">
+                <section class="border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full">
     @endif
     <section class="container mx-auto wrapper h-full">
         @yield('content')
