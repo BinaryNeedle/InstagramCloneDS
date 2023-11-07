@@ -17,22 +17,28 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::controller(LoginController::class)->group(function () {
-    route::get('/login', 'showLoginForm')->name('login');
-    route::post('/login', 'login');
-    route::post('/logout', 'logout')->name('logout');
-    route::get('/logout', 'logout')->name('logout');
+Route::middleware(['guest'])->group(function () {
+    Route::controller(LoginController::class)->group(function () {
+        route::get('/login', 'showLoginForm')->name('login');
+        route::post('/login', 'login');
+    });
+
+    Route::controller(RegisterController::class)->group(function () {
+        route::get('/register', 'showRegistrationForm')->name('register');
+        route::post('/register', 'register');
+    });
 });
 
-Route::controller(RegisterController::class)->group(function () {
-    route::get('/register', 'showRegistrationForm')->name('register');
-    route::post('/register', 'register');
+Route::get('/logout', function () {
+    return redirect('/');
 });
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/', [PagesController::class, 'index'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/', [PagesController::class, 'index'])->name('dashboard');
 
-// fix this
-Route::controller(SearchController::class)->group(function () {
-    route::get('/search', 'showSearch')->name('search');
-    route::post('/search', 'search');
+    Route::controller(SearchController::class)->group(function () {
+        route::get('/search', 'showSearch')->name('search');
+        route::post('/search', 'search');
+    });
 });
