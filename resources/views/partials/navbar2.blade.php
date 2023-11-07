@@ -16,7 +16,7 @@
                 </button>
             </div>
             <div class="flex items-center sm:hidden">
-                <a href="{{ url('/login') }}" class="flex ml-2 md:mr-24"> {{-- link to page/index --}}
+                <a href="{{ url('') }}" class="flex ml-2 md:mr-24"> {{-- link to page/index --}}
                     <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3"
                         alt="Instantgram Logo" />
                     <span
