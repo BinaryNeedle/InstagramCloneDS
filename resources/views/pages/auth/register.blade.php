@@ -2,9 +2,9 @@
 @section('title', 'Register to Instantgram')
 @section('css')
 @section('content')
-    <div class="flex flex-col justify-center items-center h-full">
-        <div class="w-full max-w-md my-auto">
-            <div class="dark:bg-[#1f2937] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="flex flex-col justify-center items-center h-full    ">
+        <div id="content" class="w-full max-w-md my-auto">
+            <div class="dark:bg-[#1f2937] shadow-md rounded px-8 pt-6 pb-8">
                 <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-32 mx-auto" alt="Instantgram Logo" />
                 <h2 class="dark:text-white text-2xl font-bold mb-6 text-center">Register</h2>
                 <form method="POST" action="{{ route('register') }}">
@@ -107,5 +107,9 @@
     </div>
 @endsection
 @section('script')
+    {{-- show hide password --}}
     <script src="{{ URL::asset('src/js/sh_pw.js') }}"></script>
+
+    {{-- check screen width --}}
+    <script src="{{ URL::asset('src/js/screen.js') }}"></script>
 @endsection

@@ -2,9 +2,9 @@
 @section('title', 'Login to Instantgram')
 @section('css')
 @section('content')
-    <div class="flex justify-center items-center h-full">
-        <div class="w-full max-w-md">
-            <div class="dark:bg-[#1f2937] shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="flex justify-center items-center h-full overflow-auto">
+        <div id="content" class="w-full max-w-md">
+            <div class="dark:bg-[#1f2937] shadow-md rounded px-8 pt-6 pb-8">
                 <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-32 mx-auto" alt="Instantgram Logo" />
                 <h1 class="text-2xl font-bold mb-6 dark:text-white text-center">Login</h1>
                 <form method="POST" action="{{ route('login') }}">
@@ -76,5 +76,9 @@
         </div>
     @endsection
     @section('script')
+        {{-- show hide password --}}
         <script src="{{ URL::asset('src/js/sh_pw.js') }}"></script>
+
+        {{-- check screen width --}}
+        <script src="{{ URL::asset('src/js/screen.js') }}"></script>
     @endsection
