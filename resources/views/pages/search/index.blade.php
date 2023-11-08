@@ -24,7 +24,7 @@
         </section>
         <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
-                <div class="">
+                <div class="w-[50px]">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
                 </div>
                 <article class="ml-3">
