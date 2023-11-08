@@ -32,8 +32,12 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+        $post = Post::find($id);
+        $likeController = new LikeController;
+        $hasLiked = $likeController->hasLiked($id);
+        $likeCount = $post->countLikes();
+
+        return view('post.show', ['post' => $post, 'hasLiked' => $hasLiked, 'likeCount' => $likeCount]);
     }
 
     public function edit($id)
