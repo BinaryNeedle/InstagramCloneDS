@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 
@@ -40,5 +41,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::controller(SearchController::class)->group(function () {
         route::get('/search', 'showSearch')->name('search');
         route::post('/search', 'search');
+    });
+
+    Route::controller(PostController::class)->group(function() {
+        Route::get('/post/create', 'create')->name('postIndex');
+        Route::post('/post/store', 'store')->name('postCreate');
+        Route::get('/post/detail/{id}', 'show')->name('postDetail');
+        Route::get('/post/edit/{id}', 'edit')->name('postChanges');
+        Route::post('/post/update/{id}', 'edit')->name('postUpdate');
+        Route::post('/post/delete/{id}', 'edit')->name('postDelete');
     });
 });
