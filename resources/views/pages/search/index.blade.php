@@ -3,8 +3,8 @@
 @section('css')
 @section('content')
     <section
-        class="search-main w-3/4 mx-auto dark:bg-[#1f2937] h-full border-2 border-gray-200 border-solid rounded-lg h-full px-4 overflow-y-auto scroll-smooth">
-        <section id="search" class="search px-60 mt-10 mb-10">
+        class="search-main mx-auto w-full sm:w-3/4 dark:bg-[#1f2937] h-full border-2 border-gray-200 border-solid rounded-lg px-4 overflow-y-auto scroll-smooth">
+        <section id="search" class="search mx-0 xl:mx-60 mt-10 mb-10">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="flex flex-col">
@@ -22,7 +22,18 @@
                 </div>
             </form>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
+            <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
+                <div class="w-[50px]">
+                    <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
+                </div>
+                <article class="ml-3">
+                    <p class="dark:text-white text-xl">Coding Studio</p>
+                    <p class="dark:text-white text-sm">BIO</p>
+                </article>
+            </a>
+        </section>
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -33,7 +44,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -44,7 +55,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -55,7 +66,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -66,7 +77,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -77,7 +88,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -88,7 +99,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -99,7 +110,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -110,7 +121,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -121,7 +132,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">
@@ -132,7 +143,7 @@
                 </article>
             </a>
         </section>
-        <section class="mx-60 mt-7">
+        <section class="mx-0 xl:mx-60 mt-7">
             <a href="#" class="flex pb-4 border-b-2 border-gray-200 border-solid h-full">
                 <div class="">
                     <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="Coding Studio">

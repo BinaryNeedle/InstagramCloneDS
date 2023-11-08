@@ -55,4 +55,9 @@ class Post extends Model
 	{
 		return $this->hasMany(Like::class);
 	}
+
+	public function countLikes()
+	{
+		return $this->hasMany('App\Models\Like')->count();
+	}
 }
