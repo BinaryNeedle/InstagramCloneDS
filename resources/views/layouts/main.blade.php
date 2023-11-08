@@ -11,11 +11,11 @@
 
 <body>
     @unless (Route::is(['login', 'register']))
-        @include('partials.navbar2')
+        @include('partials.navbar')
     @endunless
 
     @if (URL::current() !== url('/login') && URL::current() !== url('/register'))
-        @include('partials.navbar2')
+        @include('partials.navbar')
     @endif
 
     <main id="main"
