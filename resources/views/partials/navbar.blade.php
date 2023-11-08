@@ -1,4 +1,4 @@
-<nav id="navbar" class="fixed z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700" style="transition: top 0.3s;">
+<nav id="navbar" class="fixed z-40 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700" style="transition: top 0.3s;">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
@@ -61,7 +61,7 @@
     </div>
 </nav>
 
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-30 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium h-full flex flex-col items-stretch">
             <li>
@@ -83,13 +83,13 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('postIndex') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <!-- Modal toggle -->
+                <button data-modal-target="post-modal" data-modal-toggle="post-modal" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" type="button">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Add New Post</span>
-                    {{-- <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span> --}}
-                </a>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Create Post</span>
+                </button>
             </li>
             @if (isset($user))
                 <li>
@@ -128,3 +128,46 @@
         </ul>
     </div>
 </aside>
+
+
+<!-- Main modal -->
+<div id="post-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-8xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-5">
+            <form class="text-left font-medium flex flex-col" action="{{ route('postCreate') }}" method="POST">
+                @csrf
+                <div class="card grid grid-rows-5 dark:text-white">
+                    <div class="card-head col-span-3 h-5">
+                        <div class="row grid grid-cols-3 flex items-center">
+                            <h1>Back</h1>
+                            <h1 class="text-center dark:text-white">Create Your Own Post</h1>
+                            <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
+                        </div>
+                    </div>
+                    <div class="card-body col-span-3 row-span-3">
+                        <div class="row grid grid-cols-4">
+                            <div id="Banner" class="flex col-span-3 items-center justify-center">
+                                <div>
+                                    <input type="file" name="images" id="">
+                                </div>
+                            </div>
+                            <div id="FormSection flex justify-center ">
+                                <div class="flex items-center">
+                                    <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="profile" sizes="" srcset="" class="w-8">
+                                    <span class="ml-2 text-sm">Username</span>
+                                </div>
+                                <div id="Forms" class="flex flex-col gap-y-6 text-center">
+                                    <div class="my-5">
+                                        <textarea id="captions" name="captions" rows="15" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded focus:ring-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Write your description here..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
