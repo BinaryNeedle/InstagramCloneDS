@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
-        return view('pages.index');
+        //
     }
 
     /**
@@ -36,7 +35,7 @@ class PagesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('pages.account.index');
     }
 
     /**

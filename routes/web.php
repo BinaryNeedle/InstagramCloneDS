@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/post/edit/{id}', 'edit')->name('postChanges');
         Route::post('/post/update/{id}', 'edit')->name('postUpdate');
         Route::post('/post/delete/{id}', 'edit')->name('postDelete');
+    });
+
+    Route::controller(UserController::class)->group(function() {
+        Route::get('users/@{alpha}', 'show')->name('profileDetail');
     });
 });
