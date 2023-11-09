@@ -10,9 +10,9 @@
     {{-- Story Section End --}}
 
     {{-- Post Section Start --}}
-    <section class="post-main w-3/4 mx-auto h-full dark:bg-[#1f2937] px-4 py-2 overflow-y-auto">
+    <section class="post-main w-full md:w-3/4 mx-auto h-full dark:bg-[#1f2937] px-4 py-2 overflow-y-auto">
         <section
-            class="h-fit flex flex-col xl:flex-row dark:bg-[#1f2937] px-4 py-2 mt-7 border border-gray-200 border-solid">
+            class="h-fit flex flex-col xl:flex-row dark:bg-[#1f2937] px-4 py-2 my-4 border border-gray-200 border-solid">
             <section class=" flex justify-center items-center p-5 dark:bg-[#111828]">
                 <img class="w-96 xl:w-[40rem]" src="https://cdn.oneesports.gg/cdn-data/2022/09/Valorant_Phoenix_Banner.jpg"
                     alt="">
@@ -54,7 +54,7 @@
             </section>
         </section>
         <section
-            class="h-fit flex flex-col xl:flex-row dark:bg-[#1f2937] px-4 py-2 mt-7 border border-gray-200 border-solid">
+            class="h-fit flex flex-col xl:flex-row dark:bg-[#1f2937] px-4 py-2 my-4 border border-gray-200 border-solid">
             <section class="flex justify-center items-center p-5 dark:bg-[#111828]">
                 <img class="w-96 xl:w-[40rem]" src="https://etc.usf.edu/clipart/37100/37148/frac_02-03_37148_lg.gif"
                     alt="">
