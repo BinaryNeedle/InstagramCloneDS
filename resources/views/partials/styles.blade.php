@@ -1,8 +1,5 @@
 @vite('resources/css/app.css')
 
-{{-- Fontawesome --}}
-<script src="https://kit.fontawesome.com/67db78fea9.js" crossorigin="anonymous"></script>
-
 {{-- Google Font --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
