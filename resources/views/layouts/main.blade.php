@@ -9,12 +9,14 @@
     @include('partials.styles')
 </head>
 
-<body>
+<body
+    class="{{ Route::is(['login', 'register']) ? 'p-4 dark:bg-[#111828] w-full h-screen' : 'pt-14 md:p-0 xl:ml-64 md:ml-44 dark:bg-[#111828] h-screen' }}">
     @unless (Route::is(['login', 'register']))
         @include('partials.navbar')
     @endunless
-    <main id="main" class="{{ Route::is(['login', 'register']) ? 'p-4 w-full dark:bg-[#111828] h-screen' : 'pt-14 md:ml-64 dark:bg-[#111828] h-screen overflow-y-hidden' }}">
-        <section class="{{ Route::is(['login', 'register']) ? 'border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full' : 'h-full' }}">
+    <main id="main" class="">
+        <section
+            class="{{ Route::is(['login', 'register']) ? 'border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full' : 'h-full' }}">
             <section class="container mx-auto wrapper h-full">
                 @yield('content')
             </section>
