@@ -72,13 +72,13 @@
             <li>
                 <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <div class="">
-                        <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="" srcset="" class="cover-image w-10 h-10 rounded-full">
+                        <img src="{{ asset('assets/imgs/' . auth()->user()->images) }}" alt="" srcset="" class="cover-image w-10 h-10 rounded-full">
                     </div>
                     <span class="flex-1 ml-3 whitespace-nowrap">{{ auth()->user()->username }}</span>
                 </a>
             </li>
             <li>
-                <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('logout') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-7 h-6 ml-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
                     </svg>
@@ -96,42 +96,33 @@
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-5">
             <form class="text-left font-medium flex flex-col" action="{{ route('postCreate') }}" method="POST">
                 @csrf
-                <div class="card-head w-100 h-full dark:text-white">
+                <div class="card-head w-100 h-full mb-10 flex dark:text-white">
                     <button data-modal-hide="static-modal" type="button" class="dark:text-blue-600 mr-auto text-center">
                         Back
                     </button>
                     <h1 class="text-center dark:text-white">Create Your Own Post</h1>
                     <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
                 </div>
-                {{-- <div class="card-body flex h-fit dark:text-white">
-                    <div class="card-body">
-                        <div class="row grid grid-cols-4">
-                            <div id="Banner" class="relative w-100 mx-10 flex col-span-3 items-center justify-center">
-                                <input type="file" id="file" accept="image/*" hidden>
-                                <div class="img-area relative w-full h-full bg-slate-600 before:z-99 mb-7 rounded overflow-hidden flex justify-center items-center flex-column" data-img="">
-                                    <img src="" alt="" class="absolute top-0 left-0 w-full h-full object-cover object-center z-50" hidden>
-                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 19">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15h.01M4 12H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-3m-5.5 0V1.07M5.5 5l4-4 4 4" />
-                                    </svg>
-                                </div>
-                                <div class="button-center absolute flex mx-auto my-auto">
-                                    <label for="file" class="select-image cursor-pointer">Select Image</label>
-                                </div>
-                            </div>
-                            <div id="FormSection flex justify-center ">
-                                <div class="flex items-center">
-                                    <img src="{{ URL::to('/') }}/assets/imgs/logo_codio.png" alt="profile" sizes="" srcset="" class="w-8">
-                                    <span class="ml-2 text-sm">{{ auth()->user()->username }}</span>
-                                </div>
-                                <div id="Forms" class="flex flex-col gap-y-6 text-center">
-                                    <div class="my-5">
-                                        <textarea id="captions" name="captions" rows="15" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded focus:ring-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Write your description here..."></textarea>
-                                    </div>
-                                </div>
+                <div class="card-body flex items-center w-full h-full dark:text-white">
+                    <div id="browse-file" class="mx-10 w-full h-96 items-center justify-center bg-slate-600 border border-info">
+                        <input type="file" id="file" accept="image/*" hidden>
+                        <div class="img-area w-full h-full before:z-50 rounded overflow-hidden flex justify-center items-center" data-img="">
+                            <img src="" alt="" class="absolute top-0 left-0 w-full h-full object-cover object-center z-50" hidden>
+                            <label for="file" class="select-image cursor-pointer bg-blue-700 rounded px-4 py-2">Select Image</label>
+                        </div>
+                    </div>
+                    <div id="FormSection w-full h-fit justify-center">
+                        <div class="flex items-center">
+                            <img src="{{ URL::to('/') }}/assets/imgs/logo_codio.png" alt="profile" sizes="" srcset="" class="w-8">
+                            <span class="ml-2 text-sm">{{ auth()->user()->username }}</span>
+                        </div>
+                        <div id="Forms" class="flex flex-col  text-center">
+                            <div class="my-7">
+                                <textarea id="captions" name="captions" cols="40" rows="20" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Write your description here..."></textarea>
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </form>
         </div>
     </div>

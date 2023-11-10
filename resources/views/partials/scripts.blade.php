@@ -38,9 +38,11 @@
         inputFile.click();
     })
 
+
     inputFile.addEventListener('change', function() {
         const image = this.files[0]
         if (image.size < 2000000) {
+            selectImage.style.display = 'none';
             const reader = new FileReader();
             reader.onload = () => {
                 const allImg = imgArea.querySelectorAll('img');
