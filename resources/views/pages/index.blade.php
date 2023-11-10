@@ -15,8 +15,9 @@
     <section class="post-main mx-auto">
         <section class="w-full md:w-[470px] mx-0 md:mx-auto mb-3">
             <section class="flex py-3">
-                <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
-                <p class="dark:text-white self-center ml-1"><a href="#"><span>@</span>Codio</a><span> | 2 d</span></p>
+                <img class="w-12" src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
+                <p class="dark:text-white self-center ml-1"><a href="#"><b><span>@</span>Codio</a></b><span> • 2
+                        d</span></p>
             </section>
             <section class="mb-3">
                 <img src="https://s3.amazonaws.com/www-inside-design/uploads/2020/10/aspect-ratios-blogpost-1x1-1.png"
@@ -72,8 +73,9 @@
         </section>
         <section class="w-full md:w-[470px] mx-0 md:mx-auto mb-3">
             <section class="flex py-3">
-                <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
-                <p class="dark:text-white self-center ml-1"><a href="#"><span>@</span>Codio</a><span> | 2 d</span></p>
+                <img class="w-12" src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
+                <p class="dark:text-white self-center ml-1"><a href="#"><b><span>@</span>Codio</a></b><span> • 2
+                        d</span></p>
             </section>
             <section class="mb-3">
                 <img src="{{ URL::asset('assets/imgs/23.jpg') }}" alt="">
@@ -128,9 +130,9 @@
         </section>
         <section class="w-full md:w-[470px] mx-0 md:mx-auto mb-3">
             <section class="flex py-3">
-                <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
-                <p class="dark:text-white self-center ml-1"><a href="#"><span>@</span>Codio</a><span> | 2 d</span>
-                </p>
+                <img class="w-12" src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
+                <p class="dark:text-white self-center ml-1"><a href="#"><b><span>@</span>Codio</a></b><span> • 2
+                        d</span></p>
             </section>
             <section class="mb-3">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Aspect-ratio-4x3.svg/2560px-Aspect-ratio-4x3.svg.png"
@@ -186,9 +188,9 @@
         </section>
         <section class="w-full md:w-[470px] mx-0 md:mx-auto mb-3">
             <section class="flex py-3">
-                <img src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
-                <p class="dark:text-white self-center ml-1"><a href="#"><span>@</span>Codio</a><span> | 2 d</span>
-                </p>
+                <img class="w-12" src="{{ URL::asset('assets/imgs/logo_codio.png') }}" alt="">
+                <p class="dark:text-white self-center ml-1"><a href="#"><b><span>@</span>Codio</a></b><span> • 2
+                        d</span></p>
             </section>
             <section class="mb-3">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Aspect-ratio-16x9.svg/2560px-Aspect-ratio-16x9.svg.png"
