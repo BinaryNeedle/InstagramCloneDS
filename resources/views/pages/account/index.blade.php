@@ -57,7 +57,7 @@
         <section class="my-post grid grid-cols-3 gap-1">
             @foreach ($posts as $post)
                 <div class="post">
-                    <div class="cover-image aspect-square border border-info w-full h-full">
+                    <div class="cover-image aspect-square border border-info w-full h-full hover:scale-110 transition duration-300 cursor-pointer object-cover">
                         <img src="{{ $post->image_url }}" alt="" srcset="" class="object-cover h-full w-full">
                     </div>
                 </div>

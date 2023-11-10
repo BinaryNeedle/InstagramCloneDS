@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -41,7 +42,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $posts = Post::all();
+        $user = Auth::user()->id;
+        $posts = Post::all()->where('user_id', $user);
         return view('pages.account.index', compact(
             'posts'
         ));
