@@ -94,7 +94,7 @@
     <div class="relative w-full max-w-7xl max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-5">
-            <form class="text-left font-medium flex flex-col" action="{{ route('postCreate') }}" method="POST">
+            <form class="text-left font-medium flex flex-col" action="{{ route('postCreate') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-head w-100 h-full mb-10 flex dark:text-white">
                     <button data-modal-hide="static-modal" type="button" class="dark:text-blue-600 mr-auto text-center">
@@ -105,7 +105,7 @@
                 </div>
                 <div class="card-body flex items-center w-full h-full dark:text-white">
                     <div id="browse-file" class="mx-10 w-full h-96 items-center justify-center bg-slate-600 border border-info">
-                        <input type="file" id="file" accept="image/*" hidden>
+                        <input type="file" id="file" name="images" accept="image/*" hidden>
                         <div class="img-area w-full h-full before:z-50 rounded overflow-hidden flex justify-center items-center" data-img="">
                             <img src="" alt="" class="absolute top-0 left-0 w-full h-full object-cover object-center z-50" hidden>
                             <label for="file" class="select-image cursor-pointer bg-blue-700 rounded px-4 py-2">Select Image</label>
@@ -118,7 +118,7 @@
                         </div>
                         <div id="Forms" class="flex flex-col  text-center">
                             <div class="my-7">
-                                <textarea id="captions" name="captions" cols="40" rows="20" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Write your description here..."></textarea>
+                                <textarea id="captions" name="caption" cols="40" rows="20" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Write your description here..."></textarea>
                             </div>
                         </div>
                     </div>
