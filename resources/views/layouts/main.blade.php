@@ -14,8 +14,8 @@
     @unless (Route::is(['login', 'register']))
         @include('partials.navbar')
     @endunless
-    <main id="main" class="">
-        <section class="xl:container w-full md:w-full mx-0 md:mx-auto  wrapper">
+    <main id="main" class="xl:container w-full md:w-full mx-0 md:mx-auto wrapper">
+        <section class="">
             @yield('content')
         </section>
     </main>

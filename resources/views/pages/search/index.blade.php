@@ -2,8 +2,7 @@
 @section('title', 'Instantgram')
 @section('css')
 @section('content')
-    <section
-        class="search-main md:mx-auto w-full md:w-3/4 h-full border-l-2 border-r-2 border-gray-200 border-solid px-4 scroll-smooth">
+    <section class="search-main md:mx-auto w-full md:w-3/4 h-full border-l-2 border-r-2 border-gray-200 border-solid px-4">
         <section id="search" class="search mx-0 2xl:mx-60 xl:mx-44 py-10">
             <form method="POST" action="{{ route('login') }}">
                 @csrf

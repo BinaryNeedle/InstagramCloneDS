@@ -1,5 +1,11 @@
 @vite('resources/css/app.css')
 
+<style>
+    :root {
+        scroll-behavior: smooth;
+    }
+</style>
+
 {{-- Google Font --}}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

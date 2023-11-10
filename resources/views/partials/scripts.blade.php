@@ -6,32 +6,6 @@
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
 </script>
 
-{{-- hide navbar when scroll --}}
-<script>
-    (function() {
-        // Store the initial position of the scroll
-        let prevScrollpos = window.pageYOffset;
-
-        // Add a scroll event listener to the window
-        window.onscroll = function() {
-            // Get the current position of the scroll
-            let currentScrollPos = window.pageYOffset;
-
-            // If the current position is less than the previous position,
-            // that means the user is scrolling up, so show the navbar
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                // Otherwise, the user is scrolling down, so hide the navbar
-                document.getElementById("navbar").style.top = "-60px";
-            }
-
-            // Update the previous position for the next scroll event
-            prevScrollpos = currentScrollPos;
-        };
-    })();
-</script>
-
 <script>
     const selectImage = document.querySelector('.select-image');
     const inputFile = document.querySelector('#file');
