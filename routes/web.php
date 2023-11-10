@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,20 +18,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-// abababababa
-
-Route::controller(LoginController::class)->group(function () {
-    route::get('/login', 'showLoginForm')->name('login');
-    route::post('/login', 'login');
-    route::get('/logout', 'logout')->name('logout');
+Route::controller(AuthController::class)->group(function () {
+    route::any('/login', 'login')->name('login');
+    route::any('/register', 'register')->name('register');
+    route::any('/logout', 'logout')->name('logout');
 });
-
-Route::controller(RegisterController::class)->group(function () {
-    route::get('/register', 'showRegistrationForm')->name('register');
-    route::post('/register', 'register');
-});
-
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::get('/', [PagesController::class, 'index'])->name('dashboard');
