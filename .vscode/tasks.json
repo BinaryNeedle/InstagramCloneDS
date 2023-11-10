@@ -23,7 +23,7 @@
         },
         {
             "label": "Run project",
-            "dependsOn": ["npm: run", "artisan: serve"],
+            "dependsOn": ["npm: run dev", "artisan: serve"],
             "group": {
                 "kind": "build",
                 "isDefault": true
