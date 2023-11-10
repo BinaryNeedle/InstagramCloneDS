@@ -1,4 +1,4 @@
-{{-- <nav id="navbar" class="fixed z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700" style="transition: top 0.3s;">
+<nav id="navbar" class="fixed z-50 w-full md:w-0 bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700" style="transition: top 0.3s;">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
@@ -10,10 +10,6 @@
                         </path>
                     </svg>
                 </button>
-                <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24">
-                    <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="Instantgram Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Instantgram</span>
-                </a>
             </div>
             <div class="md:hidden items-center">
                 <a href="{{ url('') }}" class="flex ml-2">
@@ -29,7 +25,8 @@
                             <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
                     </div>
-                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                    {{-- <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="dropdown-user">
                         <div class="px-4 py-3" role="none">
                             @if (auth()->check())
                                 <p class="text-sm text-gray-900 dark:text-white" role="none">
@@ -43,31 +40,45 @@
                         </div>
                         <ul class="py-1" role="none">
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Dashboard</a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Settings</a>
                             </li>
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                    role="menuitem">Earnings</a>
                             </li>
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Logout</button>
+                                    <button type="submit"
+                                        class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                        role="menuitem">Logout</button>
                                 </form>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
-</nav> --}}
+</nav>
 
-<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full md:translate-x-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-54 xl:w-64 h-screen transition-transform -translate-x-full md:translate-x-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium h-full flex flex-col items-stretch">
+            <li class="pt-5 pb-16">
+                <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24">
+                    <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="Instantgram Logo" />
+                    <span class="self-center text-xl xl:text-2xl sm:text-lg font-semibold whitespace-nowrap dark:text-white">Instantgram</span>
+                </a>
+            </li>
             <li>
                 <a href="{{ url('/') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20">
@@ -123,8 +134,8 @@
             </li> --}}
             <li>
                 <a href="{{ route('profileDetail', auth()->user()->username) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <div class="cover-image rounded-full w-11">
-                        <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="" srcset="" class="">
+                    <div class="">
+                        <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="" srcset="" class="cover-image w-10 h-10 rounded-full">
                     </div>
                     <span class="flex-1 ml-3 whitespace-nowrap">Username</span>
                     {{-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}

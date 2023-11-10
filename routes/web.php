@@ -19,41 +19,37 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware(['guest'])->group(function () {
-    Route::controller(LoginController::class)->group(function () {
-        route::get('/login', 'showLoginForm')->name('login');
-        route::post('/login', 'login');
-    });
 
-    Route::controller(RegisterController::class)->group(function () {
-        route::get('/register', 'showRegistrationForm')->name('register');
-        route::post('/register', 'register');
-    });
+Route::controller(LoginController::class)->group(function () {
+    route::get('/login', 'showLoginForm')->name('login');
+    route::post('/login', 'login');
+    route::get('/logout', 'logout')->name('logout');
 });
 
-Route::get('/logout', function () {
-    return redirect('/');
+Route::controller(RegisterController::class)->group(function () {
+    route::get('/register', 'showRegistrationForm')->name('register');
+    route::post('/register', 'register');
 });
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/', [PagesController::class, 'index'])->name('dashboard');
 
-    Route::controller(SearchController::class)->group(function () {
-        route::get('/search', 'showSearch')->name('search');
-        route::post('/search', 'search');
-    });
+Route::get('/', [PagesController::class, 'index'])->name('dashboard');
 
-    Route::controller(PostController::class)->group(function() {
-        Route::get('/post/create', 'create')->name('postIndex');
-        Route::post('/post/store', 'store')->name('postCreate');
-        Route::get('/post/detail/{id}', 'show')->name('postDetail');
-        Route::get('/post/edit/{id}', 'edit')->name('postChanges');
-        Route::post('/post/update/{id}', 'edit')->name('postUpdate');
-        Route::post('/post/delete/{id}', 'edit')->name('postDelete');
-    });
+Route::controller(SearchController::class)->group(function () {
+    route::get('/search', 'showSearch')->name('search');
+    route::post('/search', 'search');
+});
 
-    Route::controller(UserController::class)->group(function() {
-        Route::get('users/@{alpha}', 'show')->name('profileDetail');
-    });
+Route::controller(PostController::class)->group(function () {
+    Route::get('/post/create', 'create')->name('postIndex');
+    Route::post('/post/store', 'store')->name('postCreate');
+    Route::get('/post/detail/{id}', 'show')->name('postDetail');
+    Route::get('/post/edit/{id}', 'edit')->name('postChanges');
+    Route::post('/post/update/{id}', 'edit')->name('postUpdate');
+    Route::post('/post/delete/{id}', 'edit')->name('postDelete');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('users/@{alpha}', 'show')->name('profileDetail');
 });

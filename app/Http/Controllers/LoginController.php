@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    protected $redirectTo = '/';
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -52,6 +50,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('dashboard');
     }
 }
