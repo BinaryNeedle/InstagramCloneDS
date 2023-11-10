@@ -4,8 +4,8 @@
 @section('css')
 @endsection
 @section('content')
-    <div class="w-9/12 h-full bg-slate-800 mx-auto dark:text-white px-16">
-        <section class="info-user grid grid-row-3 grid-cols-3 gap-10 flex items-center h-fit p-28">
+    <div class="w-9/12 h-fit bg-slate-800 mx-auto dark:text-white px-16 py-16">
+        <section class="info-user grid grid-row-3 grid-cols-3 gap-10 flex items-center h-fit">
             <div class="image-section row-span-2 mx-auto">
                 <div class="cover-image rounded-full w-fit">
                     <img src="{{ URL::to('/') }}/assets/imgs/logo_codio.png" alt="" srcset="" class="w-40">
@@ -42,7 +42,7 @@
                 </div>
                 <h1 class="flex-1 font-bold text-lg">{{ auth()->user()->name }}</h1>
             </div>
-            <div class="bio col-span-2">
+            <div class="bio col-span-2 mb-10">
                 <blockquote class="text-xl italic font-semibold text-gray-900 dark:text-white">
                     <p>{{ auth()->user()->bio }}</p>
                 </blockquote>
@@ -55,42 +55,43 @@
             </div>
         </div>
         <section class="my-post grid grid-cols-3 gap-1">
-            <div class="post">
+            @foreach ($posts as $post)
+                <div class="post">
+                    <div class="cover-image aspect-square border border-info w-full h-full">
+                        <img src="{{ $post->image_url }}" alt="" srcset="" class="object-cover h-full w-full">
+                    </div>
+                </div>
+            @endforeach
+            {{-- <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
             </div>
             <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
             </div>
             <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
             </div>
             <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
             </div>
             <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
             </div>
             <div class="post">
                 <div class="cover-image border border-rose-500">
                     <img src="{{ URL::to('/') }}/assets/imgs/post/sunrise.jpg" alt="" srcset="" class=" bg-cover">
-                    {{-- <img src="" alt="" srcset="" class="w-40"> --}}
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 @endsection

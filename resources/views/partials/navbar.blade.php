@@ -133,7 +133,7 @@
                 </a>
             </li> --}}
             <li>
-                <a href="{{ route('profileDetail', auth()->user()->username) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <div class="">
                         <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="" srcset="" class="cover-image w-10 h-10 rounded-full">
                     </div>

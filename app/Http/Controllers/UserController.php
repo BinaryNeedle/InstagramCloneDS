@@ -41,8 +41,10 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        Post::all();
-        return view('pages.account.index');
+        $posts = Post::all();
+        return view('pages.account.index', compact(
+            'posts'
+        ));
     }
 
     /**
