@@ -1,6 +1,6 @@
 {{-- // Setting Pages on your account to sett your name username bio and other --}}
 @extends('layouts.main')
-@section('title', 'Setting Account')
+@section('title', 'Edit Profile')
 @section('css')
 @section('content')
     <div class="flex flex-col justify-center items-center h-screen">

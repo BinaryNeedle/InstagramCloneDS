@@ -53,5 +53,8 @@ Route::controller(PostController::class)->group(function () {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/{username}', 'show')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileDetail');
+    Route::get('/{username}/edit', 'edit')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileEdit');
+    Route::post('/{username}/edit', 'update')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileSetting');
     Route::get('/{username}/setting', 'settingPages')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileSetting');
+    Route::post('/{username}/setting', 'update')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileSetting');
 });

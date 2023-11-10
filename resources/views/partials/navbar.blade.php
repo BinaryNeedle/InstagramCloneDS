@@ -2,7 +2,8 @@
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
-                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button"
+                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                     <span class="sr-only">Open sidebar</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
@@ -24,46 +25,15 @@
                             <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
                     </div>
-                    {{-- <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-                        id="dropdown-user">
-                        <div class="px-4 py-3" role="none">
-                            @if (auth()->check())
-                                <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                    Welcome, {{ auth()->user()->name }}
-                    </p>
-                    </p>
-                    <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                        {{ auth()->user()->username }}
-                    </p>
-                    @endif
                 </div>
-                <ul class="py-1" role="none">
-                    <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
-                    </li>
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Logout</button>
-                        </form>
-                    </li>
-                </ul>
-            </div> --}}
+            </div>
         </div>
-    </div>
-    </div>
     </div>
 </nav>
 
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-54 xl:w-64 h-screen transition-transform -translate-x-full md:translate-x-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-        <ul class="space-y-2 font-medium h-full flex flex-col items-stretch">
+        <ul class="space-y-2 font-medium h-fit flex flex-col items-stretch">
             <li class="pt-5 pb-16">
                 <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24">
                     <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="Instantgram Logo" />
@@ -73,7 +43,8 @@
             <li>
                 <a href="{{ url('/') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.487 1.746c0 4.192 3.592 1.66 4.592 5.754 0 .828 1 1.5 2 1.5s2-.672 2-1.5a1.5 1.5 0 0 1 1.5-1.5h1.5m-16.02.471c4.02 2.248 1.776 4.216 4.878 5.645C10.18 13.61 9 19 9 19m9.366-6h-2.287a3 3 0 0 0-3 3v2m6-8a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6.487 1.746c0 4.192 3.592 1.66 4.592 5.754 0 .828 1 1.5 2 1.5s2-.672 2-1.5a1.5 1.5 0 0 1 1.5-1.5h1.5m-16.02.471c4.02 2.248 1.776 4.216 4.878 5.645C10.18 13.61 9 19 9 19m9.366-6h-2.287a3 3 0 0 0-3 3v2m6-8a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                     <span class="ml-3">Explore</span>
                 </a>
@@ -96,39 +67,22 @@
                     {{-- <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span> --}}
                 </button>
             </li>
-            {{-- <li>
-                <a href="#"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
-                    </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                    class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z" />
-                        <path
-                            d="M6.737 11.061a2.961 2.961 0 0 1 .81-1.515l6.117-6.116A4.839 4.839 0 0 1 16 2.141V2a1.97 1.97 0 0 0-1.933-2H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18v-3.093l-1.546 1.546c-.413.413-.94.695-1.513.81l-3.4.679a2.947 2.947 0 0 1-1.85-.227 2.96 2.96 0 0 1-1.635-3.257l.681-3.397Z" />
-                        <path
-                            d="M8.961 16a.93.93 0 0 0 .189-.019l3.4-.679a.961.961 0 0 0 .49-.263l6.118-6.117a2.884 2.884 0 0 0-4.079-4.078l-6.117 6.117a.96.96 0 0 0-.263.491l-.679 3.4A.961.961 0 0 0 8.961 16Zm7.477-9.8a.958.958 0 0 1 .68-.281.961.961 0 0 1 .682 1.644l-.315.315-1.36-1.36.313-.318Zm-5.911 5.911 4.236-4.236 1.359 1.359-4.236 4.237-1.7.339.341-1.699Z" />
-                    </svg>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
-                </a>
-            </li> --}}
+        </ul>
+        <ul class="space-y-5 font-medium h-fit flex flex-col items-stretch mt-80">
             <li>
                 <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <div class="">
                         <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="" srcset="" class="cover-image w-10 h-10 rounded-full">
                     </div>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Username</span>
-                    {{-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> --}}
+                    <span class="flex-1 ml-3 whitespace-nowrap">{{ auth()->user()->username }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <svg class="w-7 h-6 ml-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3" />
+                    </svg>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
                 </a>
             </li>
         </ul>
@@ -136,27 +90,32 @@
 </aside>
 
 <!-- Main modal -->
-<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 hidden right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative w-full max-w-7xl max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-5">
             <form class="text-left font-medium flex flex-col" action="{{ route('postCreate') }}" method="POST">
                 @csrf
-                <div class="card grid grid-rows-5 dark:text-white">
-                    <div class="card-head col-span-3 h-5">
-                        <div class="row grid grid-cols-3 items-center">
-                            <button data-modal-hide="static-modal" type="button" class="dark:text-blue-600 mr-auto text-center">
-                                Back
-                            </button>
-                            <h1 class="text-center dark:text-white">Create Your Own Post</h1>
-                            <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
-                        </div>
-                    </div>
-                    <div class="card-body col-span-3 row-span-3">
+                <div class="card-head w-100 h-full dark:text-white">
+                    <button data-modal-hide="static-modal" type="button" class="dark:text-blue-600 mr-auto text-center">
+                        Back
+                    </button>
+                    <h1 class="text-center dark:text-white">Create Your Own Post</h1>
+                    <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
+                </div>
+                {{-- <div class="card-body flex h-fit dark:text-white">
+                    <div class="card-body">
                         <div class="row grid grid-cols-4">
-                            <div id="Banner" class=" relative w-100 h-full bg-slate-700 mx-10 flex col-span-3 items-center justify-center">
-                                <div>
-                                    <input type="file" name="images" id="">
+                            <div id="Banner" class="relative w-100 mx-10 flex col-span-3 items-center justify-center">
+                                <input type="file" id="file" accept="image/*" hidden>
+                                <div class="img-area relative w-full h-full bg-slate-600 before:z-99 mb-7 rounded overflow-hidden flex justify-center items-center flex-column" data-img="">
+                                    <img src="" alt="" class="absolute top-0 left-0 w-full h-full object-cover object-center z-50" hidden>
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 19">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15h.01M4 12H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-3m-5.5 0V1.07M5.5 5l4-4 4 4" />
+                                    </svg>
+                                </div>
+                                <div class="button-center absolute flex mx-auto my-auto">
+                                    <label for="file" class="select-image cursor-pointer">Select Image</label>
                                 </div>
                             </div>
                             <div id="FormSection flex justify-center ">
@@ -172,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </form>
         </div>
     </div>

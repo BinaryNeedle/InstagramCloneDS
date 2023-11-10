@@ -62,15 +62,17 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('pages.account.edit-profile');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        // dd($request);
+        $username = $request->username;
+        $name = $request->name;
     }
 
     /**
