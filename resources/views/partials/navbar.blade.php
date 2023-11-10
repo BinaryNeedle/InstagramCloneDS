@@ -32,14 +32,12 @@
 </nav>
 
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-52 xl:w-64 h-screen transition-transform -translate-x-full md:translate-x-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+    <div class="h-full flex flex-col justify-between px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+        <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24 pt-5">
+            <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="Instantgram Logo" />
+            <span class="self-center text-xl xl:text-2xl sm:text-lg font-semibold whitespace-nowrap dark:text-white">Instantgram</span>
+        </a>
         <ul class="space-y-2 font-medium h-fit flex flex-col items-stretch">
-            <li class="pt-5 pb-16">
-                <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24">
-                    <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3" alt="Instantgram Logo" />
-                    <span class="self-center text-xl xl:text-2xl sm:text-lg font-semibold whitespace-nowrap dark:text-white">Instantgram</span>
-                </a>
-            </li>
             <li>
                 <a href="{{ url('/') }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 20">
@@ -68,7 +66,7 @@
                 </button>
             </li>
         </ul>
-        <ul class="space-y-5 font-medium h-fit flex flex-col items-stretch mt-80">
+        <ul class="space-y-5 font-medium h-fit flex flex-col items-stretch pb-2">
             <li>
                 <a href="{{ route('profileDetail', ['username' => '@' . auth()->user()->username]) }}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <div class="cover-images">
