@@ -15,7 +15,7 @@
         @include('partials.navbar')
     @endunless
     <main id="main" class="">
-        <section class="container mx-auto wrapper">
+        <section class="container mx-0 md:mx-auto wrapper">
             @yield('content')
         </section>
     </main>
