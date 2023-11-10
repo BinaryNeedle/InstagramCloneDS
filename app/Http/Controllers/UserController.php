@@ -22,6 +22,14 @@ class UserController extends Controller
     }
 
     /**
+     * Display a setting pages of the user.
+     */
+    public function settingPages()
+    {
+        return view('pages.account.setting');
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
