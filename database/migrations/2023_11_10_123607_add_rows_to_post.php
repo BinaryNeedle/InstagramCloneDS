@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::table('users')->updateOrInsert(
+        DB::table('post')->updateOrInsert(
             [
                 'user_id' => '1',
                 'caption' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi deserunt sequi tenetur itaque quod recusandae! Officia sit iste, illo facilis, animi fugiat magnam suscipit, quam doloribus voluptatum perspiciatis mollitia incidunt.',
