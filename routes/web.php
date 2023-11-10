@@ -51,5 +51,5 @@ Route::controller(PostController::class)->group(function () {
 });
 
 Route::controller(UserController::class)->group(function () {
-    Route::get('users/@{alpha}', 'show')->name('profileDetail');
+    Route::get('/{username}', 'show')->where('username', '^@[A-Za-z0-9._%+-]+$')->name('profileDetail');
 });
