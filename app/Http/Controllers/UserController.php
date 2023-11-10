@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -40,7 +41,10 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        return view('pages.account.index');
+        $posts = Post::all();
+        return view('pages.account.index', compact(
+            'posts'
+        ));
     }
 
     /**
