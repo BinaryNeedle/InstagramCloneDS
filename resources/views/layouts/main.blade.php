@@ -10,7 +10,7 @@
 </head>
 
 <body
-    class="{{ Route::is(['login', 'register']) ? 'p-4 dark:bg-[#111828] w-full' : 'pt-14 md:p-0 xl:ml-64 md:ml-44 dark:bg-[#111828]' }}">
+    class="{{ Route::is(['login', 'register']) ? 'dark:bg-[#111828] w-full' : 'md:p-0 xl:ml-64 md:ml-44 dark:bg-[#111828]' }}">
     @unless (Route::is(['login', 'register']))
         @include('partials.navbar')
     @endunless
