@@ -2,7 +2,7 @@
 @section('title', 'Register to Instantgram')
 @section('css')
 @section('content')
-    <div class="flex flex-col justify-center items-center h-full    ">
+    <div class="flex flex-col justify-center items-center h-screen">
         <div id="content" class="w-full max-w-md my-auto">
             <div class="dark:bg-[#1f2937] shadow-md rounded px-8 pt-6 pb-8">
                 <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-32 mx-auto" alt="Instantgram Logo" />
