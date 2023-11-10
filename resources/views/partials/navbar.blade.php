@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li>
-                <button data-modal-target="post-modal"data-modal-toggle="post-modal" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" type="button">
+                <button data-modal-target="static-modal" data-modal-toggle="static-modal" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" type="button">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
@@ -135,7 +135,7 @@
 </aside>
 
 <!-- Main modal -->
-<div id="post-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative w-full max-w-7xl max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-5">
@@ -144,22 +144,24 @@
                 <div class="card grid grid-rows-5 dark:text-white">
                     <div class="card-head col-span-3 h-5">
                         <div class="row grid grid-cols-3 flex items-center">
-                            <h1>Back</h1>
+                            <button data-modal-hide="static-modal" type="button" class="dark:text-blue-600 mr-auto text-center">
+                                Back
+                            </button>
                             <h1 class="text-center dark:text-white">Create Your Own Post</h1>
                             <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
                         </div>
                     </div>
                     <div class="card-body col-span-3 row-span-3">
                         <div class="row grid grid-cols-4">
-                            <div id="Banner" class="flex col-span-3 items-center justify-center">
+                            <div id="Banner" class=" relative w-100 h-full bg-slate-700 mx-10 flex col-span-3 items-center justify-center">
                                 <div>
                                     <input type="file" name="images" id="">
                                 </div>
                             </div>
                             <div id="FormSection flex justify-center ">
                                 <div class="flex items-center">
-                                    <img src="{{ asset('assets/imgs/logo_codio.png') }}" alt="profile" sizes="" srcset="" class="w-8">
-                                    <span class="ml-2 text-sm">Username</span>
+                                    <img src="{{ URL::to('/') }}/assets/imgs/logo_codio.png" alt="profile" sizes="" srcset="" class="w-8">
+                                    <span class="ml-2 text-sm">{{ auth()->user()->username }}</span>
                                 </div>
                                 <div id="Forms" class="flex flex-col gap-y-6 text-center">
                                     <div class="my-5">
