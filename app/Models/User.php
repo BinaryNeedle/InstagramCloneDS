@@ -13,7 +13,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * Class User
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $username
@@ -25,7 +25,7 @@ use Illuminate\Notifications\Notifiable;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Comment[] $comments
  * @property Collection|Like[] $likes
  * @property Collection|Post[] $posts
