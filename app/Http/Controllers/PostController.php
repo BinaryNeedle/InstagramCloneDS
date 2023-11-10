@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -26,9 +28,30 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'images' => 'required|mimes:png,jpg,jpeg|max:2048',
+        //     ]);
+
+        // // dd($images);
+
+
         $username = Auth::user()->username;
         $user_id = Auth::user()->id;
 
+        $post = new Post;
+        $post->user_id = $user_id;
+        $post->caption = $request->caption;
+
+        if (request()->hasFile('images')){
+            $images = $request->file('images');
+            $fileName = Carbon::now()->getTimestampMs() . "-" . $images->getClientOriginalName();
+            $path = public_path('/assets/imgs/post/');
+            $images->move($path, $fileName);
+            $post->images = $fileName;
+            // Storage::disk('public')->put($path, file_get_contents($images));s
+        }
+
+        $post->save();
 
         return redirect('/@' . $username)->with('success', 'Post created successfully!');
     }

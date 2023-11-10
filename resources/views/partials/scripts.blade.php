@@ -6,37 +6,28 @@
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
 </script>
 
+
 <script>
-    const selectImage = document.querySelector('.select-image');
-    const inputFile = document.querySelector('#file');
-    const imgArea = document.querySelector('.img-area');
-    const parrentImg = document.getElementById('browse-file');
-
-    selectImage.addEventListener('click', function() {
-        inputFile.click();
-    })
-
-    inputFile.addEventListener('change', function() {
-        const image = this.files[0]
-        if (image.size < 2000000) {
-            selectImage.style.display = 'none';
-            parrentImg.style.setProperty("height", "100%", "important");
-            const reader = new FileReader();
-            reader.onload = () => {
-                const allImg = imgArea.querySelectorAll('img');
-                allImg.forEach(item => item.remove());
-                const imgUrl = reader.result;
-                const img = document.createElement('img');
-                img.src = imgUrl;
-                imgArea.appendChild(img);
-                imgArea.classList.add('active');
-                imgArea.dataset.img = image.name;
-            }
-            reader.readAsDataURL(image);
-        } else {
-            alert("Image size more than 2MB");
+    function previewImage(input) {
+        const preview = document.getElementById('preview');
+        const parrentImg = document.getElementById('browse-file');
+        const selectImage = document.getElementById('select-image');
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onloadend = function() {
+            preview.src = reader.result;
+            preview.hidden = false;
         }
-    })
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+            preview.hidden = true;
+        }
+        selectImage.style.display = 'none';
+        parrentImg.style.setProperty("height", "700px", "important");
+        parrentImg.style.setProperty("width", "700px", "important");
+    }
 </script>
 
 @yield('script')

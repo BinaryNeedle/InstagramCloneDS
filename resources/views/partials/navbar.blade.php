@@ -102,16 +102,16 @@
                     <button type="submit" class="ml-auto text-center text-blue-600">Publish</button>
                 </div>
                 <div class="card-body flex items-center w-full h-full dark:text-white">
-                    <div id="browse-file" class="mx-10 w-full h-96 items-center justify-center bg-slate-600 border border-info">
-                        <input type="file" id="file" name="images" accept="image/*" hidden>
+                    <div id="browse-file" class="mx-10 w-[700px] h-[700px] items-center justify-center bg-slate-600 border border-blue-600">
+                        <input type="file" id="file" name="images" accept="image/*" hidden onchange="previewImage(this)">
                         <div class="img-area w-full h-full before:z-50 rounded overflow-hidden flex justify-center items-center" data-img="">
-                            <img src="" alt="" class="absolute top-0 left-0 w-full h-full object-cover object-center z-50" hidden>
-                            <label for="file" class="select-image cursor-pointer bg-blue-700 rounded px-4 py-2">Select Image</label>
+                            <img id="preview" src="" alt="" class="object-cover object-center z-50" hidden>
+                            <label for="file" id="select-image" class="select-image cursor-pointer bg-blue-700 rounded px-4 py-2">Select Image</label>
                         </div>
                     </div>
                     <div id="FormSection w-full h-fit justify-center">
                         <div class="flex items-center">
-                            <img src="{{ URL::to('/') }}/assets/imgs/logo_codio.png" alt="profile" sizes="" srcset="" class="w-8">
+                            <img src="{{ asset('assets/imgs/profiles/' . auth()->user()->images) }}" alt="profile" sizes="" srcset="" class="w-8">
                             <span class="ml-2 text-sm">{{ auth()->user()->username }}</span>
                         </div>
                         <div id="Forms" class="flex flex-col  text-center">
