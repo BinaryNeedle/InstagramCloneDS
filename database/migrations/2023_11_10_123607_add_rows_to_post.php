@@ -18,6 +18,7 @@ return new class extends Migration
                 'caption' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi deserunt sequi tenetur itaque quod recusandae! Officia sit iste, illo facilis, animi fugiat magnam suscipit, quam doloribus voluptatum perspiciatis mollitia incidunt.',
                 'images' => 'http://localhost:8000/assets/imgs/post/wind.jpg',
                 'created_at' => Carbon\Carbon::now(),
+
             ]
         );
     }
