@@ -2,29 +2,34 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run npm development builds",
+            "label": "npm: run",
             "type": "npm",
             "script": "dev",
             "presentation": {
-                "reveal": "always",
-                "panel": "shared"
+                "echo": false,
+                "reveal": "silent",
+                "panel": "new"
             }
         },
         {
-            "label": "Run php web server",
+            "label": "artisan: serve",
             "type": "shell",
             "command": "php artisan serve",
             "presentation": {
-                "reveal": "always",
-                "panel": "shared"
+                "echo": false,
+                "reveal": "silent",
+                "panel": "new"
             }
         },
         {
             "label": "Run project",
-            "dependsOn": ["Run npm development builds", "Run php web server"],
+            "dependsOn": ["npm: run", "artisan: serve"],
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
             }
         }
     ]
