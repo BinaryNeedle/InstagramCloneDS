@@ -16,7 +16,7 @@ return new class extends Migration
             [
                 'user_id' => '1',
                 'caption' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi deserunt sequi tenetur itaque quod recusandae! Officia sit iste, illo facilis, animi fugiat magnam suscipit, quam doloribus voluptatum perspiciatis mollitia incidunt.',
-                'image_url' => 'http://localhost:8000/assets/imgs/post/wind.jpg',
+                'images' => 'http://localhost:8000/assets/imgs/post/wind.jpg',
                 'created_at' => Carbon\Carbon::now(),
             ]
         );

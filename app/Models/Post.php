@@ -12,13 +12,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Post
- * 
+ *
  * @property int $post_id
  * @property int $user_id
  * @property string $caption
  * @property string|null $image_url
  * @property Carbon|null $created_at
- * 
+ *
  * @property User $user
  * @property Collection|Comment[] $comments
  * @property Collection|Like[] $likes
@@ -38,7 +38,7 @@ class Post extends Model
 	protected $fillable = [
 		'user_id',
 		'caption',
-		'image_url'
+		'images'
 	];
 
 	public function user()
