@@ -6,6 +6,15 @@
     :root {
         scroll-behavior: smooth;
     }
+
+    @font-face {
+        font-family: 'instagram_title';
+        src: url({{ URL::asset('assets/fonts/instagram_title_font_regular.otf') }});
+    }
+
+    #instantgram_font {
+        font-family: 'instagram_title';
+    }
 </style>
 
 {{-- Google Font --}}
