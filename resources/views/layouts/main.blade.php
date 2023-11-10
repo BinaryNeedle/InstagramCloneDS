@@ -11,8 +11,9 @@
 
 <body>
     @unless (Route::is(['login', 'register']))
-        @include('partials.navbar')
+    @include('partials.navbar')
     @endunless
+
     <main id="main" class="{{ Route::is(['login', 'register']) ? 'p-4 w-full dark:bg-[#111828] h-screen' : 'pt-14 md:ml-64 dark:bg-[#111828] h-screen overflow-y-hidden' }}">
         <section class="{{ Route::is(['login', 'register']) ? 'border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full' : 'h-full' }}">
             <section class="container mx-auto wrapper h-full">
@@ -23,7 +24,6 @@
 
     @include('partials.footers')
     @include('partials.scripts')
-    @yield('script')
 </body>
 
 </html>
