@@ -14,12 +14,9 @@
     @unless (Route::is(['login', 'register']))
         @include('partials.navbar')
     @endunless
-    <main id="main" class="">
-        <section
-            class="{{ Route::is(['login', 'register']) ? 'border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 h-full' : 'h-full' }}">
-            <section class="container mx-auto wrapper h-full">
-                @yield('content')
-            </section>
+    <main id="main" class="h-full">
+        <section class="container mx-auto wrapper h-full">
+            @yield('content')
         </section>
     </main>
 

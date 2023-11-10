@@ -85,7 +85,7 @@
     aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 font-medium h-full flex flex-col items-stretch">
-            <li class="pt-5 pb-14">
+            <li class="pt-5 pb-16">
                 <a href="{{ url('') }}" class="hidden md:flex ml-2 md:mr-24">
                     <img src="{{ URL::asset('assets/imgs/logo-exported.png') }}" class="h-8 mr-3"
                         alt="Instantgram Logo" />
