@@ -1,5 +1,7 @@
 @vite('resources/css/app.css')
 
+<link rel="icon" href="{{ URL::asset('assets/imgs/logo-exported.png') }}" type="image/png">
+
 <style>
     :root {
         scroll-behavior: smooth;
