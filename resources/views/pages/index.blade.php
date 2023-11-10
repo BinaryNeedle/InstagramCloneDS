@@ -4,7 +4,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ URL::asset('src/css/partials/scrollbar.css') }}">
 @endsection
-@section('content2')
+@section('content')
     {{-- Story Section Start --}}
     <section class="story-main">
 
