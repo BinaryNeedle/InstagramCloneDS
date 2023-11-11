@@ -33,13 +33,13 @@ Route::group(['middleware' => 'guest'], function () {
     //login
     Route::get('/login', Login::class)->name('login');
 });
-route::any('/logout', [Login::class, 'logout'])->name('logout');
 
 // route::get('/login', App\Livewire\Auth\Login::class)->name('login');
 
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', Home::class)->name('dashboard');
+    route::any('/logout', [Login::class, 'logout'])->name('logout');
 });
 
 
