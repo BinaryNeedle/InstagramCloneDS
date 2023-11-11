@@ -33,13 +33,15 @@ Route::group(['middleware' => 'guest'], function () {
     //     ->layout('layouts.app')->name('auth.register');
 
     //login
-    Route::get('/login', Login::class)->name('auth.login');
+    Route::get('/login', Login::class)->name('login');
 });
 
 // route::get('/login', App\Livewire\Auth\Login::class)->name('login');
 
 
-Route::get('/', Home::class)->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', Home::class)->name('dashboard');
+});
 
 
 Route::controller(SearchController::class)->group(function () {
