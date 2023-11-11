@@ -6,6 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Livewire\Pages\Home;
+use App\Livewire\Auth\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +21,26 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::controller(AuthController::class)->group(function () {
-    route::any('/login', 'login')->name('login');
-    route::any('/register', 'register')->name('register');
+    // route::any('/login', 'login')->name('login');
+    // route::any('/register', 'register')->name('register');
     route::any('/logout', 'logout')->name('logout');
 });
 
+Route::group(['middleware' => 'guest'], function () {
 
-Route::get('/', [PagesController::class, 'index'])->name('dashboard');
+    //register
+    // Route::get('/register', 'auth.register')
+    //     ->layout('layouts.app')->name('auth.register');
+
+    //login
+    Route::get('/login', Login::class)->name('auth.login');
+});
+
+// route::get('/login', App\Livewire\Auth\Login::class)->name('login');
+
+
+Route::get('/', Home::class)->name('dashboard');
+
 
 Route::controller(SearchController::class)->group(function () {
     route::get('/search', 'showSearch')->name('search');
