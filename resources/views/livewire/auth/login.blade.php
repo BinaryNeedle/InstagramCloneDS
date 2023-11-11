@@ -44,7 +44,7 @@
 
                     @if (Route::has('register'))
                     <p class="dark:text-white my-5">Didn't have account yet?</p>
-                    <a class="w-full bg-blue-500 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{{ route('register') }}">
+                    <a class="w-full bg-blue-500 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{{ route('register') }}" wire:navigate>
                         Register
                     </a>
                     @endif

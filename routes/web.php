@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Livewire\Pages\Home;
 use App\Livewire\Auth\Login;
+use App\Livewire\Auth\Register;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,22 +20,10 @@ use App\Livewire\Auth\Login;
 |
 */
 
-Route::controller(AuthController::class)->group(function () {
-    // route::any('/login', 'login')->name('login');
-    // route::any('/register', 'register')->name('register');
-});
-
 Route::group(['middleware' => 'guest'], function () {
-
-    //register
-    // Route::get('/register', 'auth.register')
-    //     ->layout('layouts.app')->name('auth.register');
-
-    //login
     Route::get('/login', Login::class)->name('login');
+    Route::get('/register', Register::class)->name('register');
 });
-
-// route::get('/login', App\Livewire\Auth\Login::class)->name('login');
 
 
 Route::middleware(['auth'])->group(function () {
