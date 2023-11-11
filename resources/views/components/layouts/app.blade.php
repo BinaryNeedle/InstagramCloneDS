@@ -11,7 +11,7 @@
 
 <body class="{{ request()->is('login', 'register') ? 'dark:bg-[#111828] w-full' : 'md:p-0 xl:ml-64 md:ml-44 dark:bg-[#111828]' }}">
     @unless (request()->is('login', 'register'))
-    @livewire('partials.navbar')
+    @include('partials.navbar')
     @endunless
 
     <main id="main" class="xl:container w-full md:w-full mx-0 md:mx-auto wrapper">

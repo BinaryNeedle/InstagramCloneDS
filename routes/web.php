@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
@@ -23,7 +22,6 @@ use App\Livewire\Auth\Login;
 Route::controller(AuthController::class)->group(function () {
     // route::any('/login', 'login')->name('login');
     // route::any('/register', 'register')->name('register');
-    route::any('/logout', 'logout')->name('logout');
 });
 
 Route::group(['middleware' => 'guest'], function () {
@@ -35,6 +33,7 @@ Route::group(['middleware' => 'guest'], function () {
     //login
     Route::get('/login', Login::class)->name('login');
 });
+route::any('/logout', [Login::class, 'logout'])->name('logout');
 
 // route::get('/login', App\Livewire\Auth\Login::class)->name('login');
 

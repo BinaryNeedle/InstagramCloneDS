@@ -7,6 +7,7 @@ use Livewire\Attributes\Rule;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class Login extends Component
 {
@@ -41,8 +42,22 @@ class Login extends Component
         }
 
         Auth::login($user);
+        Session::regenerate();
 
-        return redirect()->route('dashboard');
+        return $this->redirect(
+            session('url.intended', Route('dashboard')),
+            navigate: true
+        );
+    }
+
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+
+        Session::invalidate();
+        Session::regenerateToken();
+
+        return redirect()->route('login');
     }
 
     public function render()
