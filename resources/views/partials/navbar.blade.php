@@ -172,7 +172,7 @@
                 <img src="{{ asset('assets/imgs/post/sunrise.jpg') }}" alt="">
             </section>
         </section>
-        <section class="w-full md:w-[470px] h-[836px] relative">
+        <section class="w-full md:w-[470px] h-[836px] relative"> {{-- width and height is based on ration 16:9 --}}
             <section class="h-full dark:bg-[#111828]">
                 <section class="flex py-3">
                     <img class="w-10  rounded-full" src="{{ asset('assets/imgs/profiles/bjorka.png') }}"
