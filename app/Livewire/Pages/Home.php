@@ -33,8 +33,6 @@ class Home extends Component
     {
         $post = Post::find($id);
 
-        // dd($post);
-
         if ($this->isLiked($post)) {
             $post->likes()->where('user_id', auth()->user()->id)->delete();
             return;
