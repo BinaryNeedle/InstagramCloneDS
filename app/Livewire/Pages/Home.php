@@ -51,7 +51,7 @@ class Home extends Component
         return false;
     }
 
-    public function getCaption($post)
+    public function getCaptionText($post)
     {
         $limit = 68;
         $caption = $post->caption;
@@ -86,7 +86,7 @@ class Home extends Component
     {
         return view('livewire.pages.home')->with(
             'posts',
-            Post::limit($this->loadAmount)->get()
+            Post::limit($this->loadAmount)->orderBy('created_at', 'desc')->get()
         );
     }
 }
