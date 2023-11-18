@@ -29,6 +29,30 @@ class Home extends Component
         $post->captionState = "expanded";
     }
 
+    public function likeThisPost($id)
+    {
+        $post = Post::find($id);
+
+        // dd($post);
+
+        if ($this->isLiked($post)) {
+            $post->likes()->where('user_id', auth()->user()->id)->delete();
+            return;
+        }
+
+        $post->likes()->create([
+            'user_id' => auth()->user()->id
+        ]);
+    }
+
+    public function isLiked($post)
+    {
+        if ($post->likes->contains('user_id', auth()->user()->id)) {
+            return true;
+        }
+        return false;
+    }
+
     public function getCaption($post)
     {
         $limit = 68;
