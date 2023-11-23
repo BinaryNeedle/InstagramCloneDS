@@ -54,7 +54,7 @@
                 {{ $this->getLikeCountText($post) }}</p>
             <section class="mb-3">
                 <p class="w-full resize-none bg-transparent focus:outline-none overflow-hidden max-h-32 dark:text-white text-justify scrollbar-hide"
-                    readonly>{{ $this->getCaption($post, false) }}</p>
+                    readonly>{{ $this->getCaptionText($post, false) }}</p>
                 <a href="#" wire:click="setCaptionState($post)" wire:click.prevent="..."
                     class="dark:text-slate-400">more</a>
             </section>
